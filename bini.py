@@ -17,7 +17,7 @@ INTEGER_TYPE = 1
 FLOAT_TYPE = 2
 STRING_TYPE = 3
 
-MAGIC = 0x494e4942 # "BINI"
+MAGIC = 0x494e4942  # "BINI"
 
 
 def load(f):
@@ -59,7 +59,8 @@ def load(f):
                     string_index = read_struct(f, STRING_STRUCT)[0]
                     value = string_table[string_index]
                 else:
-                    raise ValueError("invalid type %d at offset 0x%x" % (type_, f.tell() - TYPE_STRUCT.size))
+                    raise ValueError("invalid type %d at offset 0x%x" %
+                                     (type_, f.tell() - TYPE_STRUCT.size))
                 values.append(value)
             entries.append(Entry(key_name, values))
         sections.append(Section(section_name, entries))
