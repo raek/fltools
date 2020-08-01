@@ -1,5 +1,5 @@
 from collections import namedtuple
-from struct import Struct, pack, unpack
+from struct import Struct
 
 
 Section = namedtuple("Section", "name, entries")
